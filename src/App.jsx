@@ -39,7 +39,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-blue-300">
+    <div className="min-h-screen flex items-center justify-center bg-[url('./assets/image.jpg')]">
       <div className="max-w-md w-full bg-white p-8 shadow-2xl rounded-lg mb-5">
         <div className="flex items-center justify-center mb-4">
           <FaTasks className="text-4xl mr-5" />
