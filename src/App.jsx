@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
+import { FaTasks } from 'react-icons/fa';
 import TaskList from './components/TaskList';
 import AddTaskForm from './components/AddTaskForm';
 import SearchBar from './components/SearchBar';
 
 function App() {
   const [tasks, setTasks] = useState([]);
-  const [searchQuery, setSearchQuery] = useState('')
+  const [searchQuery, setSearchQuery] = useState('');
 
   const addTask = (newTask) => {
     setTasks([...tasks, newTask]);
@@ -33,15 +34,17 @@ function App() {
   };
 
   const handleReset = () => {
-    setTasks([])
     setSearchQuery('');
-      
-  }
+    setTasks([]);
+  };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+    <div className="min-h-screen flex items-center justify-center bg-blue-300">
       <div className="max-w-md w-full bg-white p-8 shadow-2xl rounded-lg mb-5">
-        <h1 className="text-3xl font-bold mb-6">Task Manager App</h1>
+        <div className="flex items-center justify-center mb-4">
+          <FaTasks className="text-4xl mr-5" />
+          <h1 className="text-3xl font-bold">Task Manager App</h1>
+        </div>
 
         <SearchBar value={searchQuery} onSearch={handleSearch} onReset={handleReset} className="m-4" />
 
